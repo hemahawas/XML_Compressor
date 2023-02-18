@@ -168,19 +168,15 @@ void decompress(string compressed){
     
     // Finally, put the xml to the decompressed file 
     ofstream ofile;
-    ofile.open("large_decompressed.xml");
+    ofile.open("decompressed/decompressed");
     ofile << data;
     ofile.close();
 }
 
-void toEmpty(string code){
-    if(code.size() == 0) return;
-    toEmpty(code.erase(0,1));  
-}
-/*
+
 int main(){
     // To decompress
-    decompress("large_compressed.huf");
+    decompress("compressed/compressed.huf");
 
     /*_____________________________________Decompress Testing_____________________________________*/
     
@@ -217,10 +213,10 @@ int main(){
     /*ofstream binaryFile;
     binaryFile.open("binary_decompressed.txt");
     binaryFile<<encodedData;
-    binaryFile.close();
+    binaryFile.close();*/
     
     system("pause");
     return 0;
 }
-*/
+
 

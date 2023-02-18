@@ -183,7 +183,7 @@ void compress(string sample){
 
     // Finally, put the data codes and the encoded data as a compressed file 
     ofstream ofile;
-    ofile.open("compressed/mini_compressed.huf");
+    ofile.open("compressed/large_compressed.huf");
     ofile << dataCodes << "," << endl;
     compressBinaryData(encodedData, ofile);
     
@@ -199,11 +199,11 @@ std::ifstream::pos_type filesize(const char* filename)
 
 int main(){
     // To compress
-    compress("samples/minisample.xml");
+    compress("samples/largesample.xml");
     
     // Print the size
-    cout << "Minified XML file size (bytes)       : " << filesize("samples/minisample.xml") << endl;
-    cout << "Compressed XML file size (bytes)     : " << filesize("compressed/mini_compressed.huf") << endl;
+    cout << "Minified XML file size (bytes)       : " << filesize("samples/largesample.xml") << endl;
+    cout << "Compressed XML file size (bytes)     : " << filesize("compressed/large_compressed.huf") << endl;
     
 
     /*_____________________________________Compression For Testing_____________________________________*/
