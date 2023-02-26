@@ -9,4 +9,4 @@ Compress XML files with Huffman Algorithm
   Decompress in 13 seconds\
 **largesample:**\
   Compress in 14 seconds from 563630 -> 334060 bytes\
-  Decompress in 13 min *(Big Bug not solved yet :)*
+  Decompress in 13 seconds *(solved. Thanks god :)*

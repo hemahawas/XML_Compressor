@@ -96,15 +96,17 @@ void getData(BinaryNode* root, string code, string& s){
         return;
     }
 
-    BinaryNode* current = root;
-    while(code.size() != 0){
+    int i = 0;
 
-        if(code[0] == '0' && current->left){
+    BinaryNode* current = root;
+    while(i != code.size()){
+
+        if(code[i] == '0' && current->left){
             current = current->left;
-            code = code.substr(1);
-        }else if(code[0] == '1' && current->right){
+            i++;
+        }else if(code[i] == '1' && current->right){
             current = current->right;
-            code = code.substr(1);
+            i++;
         }
 
         // Base case
@@ -168,7 +170,7 @@ void decompress(string compressed){
     
     // Finally, put the xml to the decompressed file 
     ofstream ofile;
-    ofile.open("decompressed/decompressed");
+    ofile.open("decompressed/large_decompressed");
     ofile << data;
     ofile.close();
 }
@@ -176,7 +178,7 @@ void decompress(string compressed){
 
 int main(){
     // To decompress
-    decompress("compressed/compressed.huf");
+    decompress("compressed/large_compressed.huf");
 
     /*_____________________________________Decompress Testing_____________________________________*/
     
